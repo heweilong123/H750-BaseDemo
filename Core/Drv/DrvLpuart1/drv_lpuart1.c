@@ -16,13 +16,8 @@ extern DMA_HandleTypeDef hdma_lpuart1_rx;
 extern DMA_HandleTypeDef hdma_lpuart1_tx;
 extern UART_HandleTypeDef hlpuart1;
 
-static bool init_over = false;
-
 void drv_lpuart1_transmit_dma(uint8_t* data, size_t len)
 {
-	if(init_over == false)
-		return;
-	
 	/* 发送的数据必须放在tx_buffer中 */
 	memset(tx_buffer, 0x00, sizeof(tx_buffer));
 	memcpy(tx_buffer, data, rx_len);
@@ -56,14 +51,10 @@ void drv_lpuart1_init(void)
 	HAL_UART_Receive_DMA(&hlpuart1,rx_buffer,sizeof(rx_buffer));
 	recv_end_flag=0;
 	rx_len = 0;
-	init_over = true;
 }
 
 void drv_lpuart1_poll(void)
 {
-	if(init_over == false)
-		return;
-	
 	if(recv_end_flag ==1)
 	{
 		drv_lpuart1_printf("%s \r\n", buffer);
@@ -78,9 +69,6 @@ void drv_lpuart1_poll(void)
 
 void drv_lpuart1_irq(void)
 {
-	if(init_over == false)
-		return;
-	
 	/* 获取空闲中断状态 */
 	uint32_t tmp_flag =__HAL_UART_GET_FLAG(&hlpuart1,UART_FLAG_IDLE);
 	
