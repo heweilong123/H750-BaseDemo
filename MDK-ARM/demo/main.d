@@ -33,4 +33,4 @@ demo/main.o: ../Core/Src/main.c ../Core/Inc\main.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_pwr.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
   ../Core/Inc\memorymap.h ../Core/Inc\gpio.h ../Core/Drv\drv_include.h \
-  ../Core/Drv/DrvLed/drv_led.h
+  ../Core/Drv/DrvLed/drv_led.h ../Core/Drv/DrvKey/drv_key.h

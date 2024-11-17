@@ -102,11 +102,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		LED_R_TOG;
-		LED_G_TOG;
-		LED_B_TOG;
-		// HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
-		HAL_Delay(1000);
+		LED_R_SET(KEY_STATUS_IRQ == KEY_ON ? LED_ON : LED_OFF);
   }
   /* USER CODE END 3 */
 }

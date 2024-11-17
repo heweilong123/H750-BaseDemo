@@ -10,6 +10,7 @@
                 "d:\\plante\\STM\\H750\\BaseDemo\\BaseDemo\\Drivers\\CMSIS\\Include",
                 "d:\\plante\\STM\\H750\\BaseDemo\\BaseDemo\\Core\\Drv",
                 "d:\\plante\\STM\\H750\\BaseDemo\\BaseDemo\\Core\\Drv\\DrvLed",
+                "d:\\plante\\STM\\H750\\BaseDemo\\BaseDemo\\Core\\Drv\\DrvKey",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux_compat",
