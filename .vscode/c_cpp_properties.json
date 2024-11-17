@@ -11,8 +11,10 @@
                     "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc",
                     "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
                     "${workspaceFolder}/MDK-ARM/RTE/_demo",
+                    "${workspaceFolder}/Core/Drv",
                     "${workspaceFolder}/Core/Drv/DrvLed",
                     "${workspaceFolder}/Core/Drv/DrvKey",
+                    "${workspaceFolder}/Core/Drv/DrvLpuart1",
                     "D:/Keil_v5/ARM/ARMCC/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true
@@ -25,8 +27,10 @@
                 "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/MDK-ARM/RTE/_demo",
+								"${workspaceFolder}/Core/Drv",
 								"${workspaceFolder}/Core/Drv/DrvLed",
 								"${workspaceFolder}/Core/Drv/DrvKey",
+								"${workspaceFolder}/Core/Drv/DrvLpuart1",
                 "D:/Keil_v5/ARM/ARMCC/include"
             ],
             "defines": [

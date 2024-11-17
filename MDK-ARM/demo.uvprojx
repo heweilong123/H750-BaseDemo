@@ -761,6 +761,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Drv\DrvLpuart1\drv_lpuart1.c</FilePath>
             </File>
+            <File>
+              <FileName>drv_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Drv\drv_init.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

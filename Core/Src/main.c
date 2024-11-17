@@ -96,7 +96,7 @@ int main(void)
   MX_BDMA_Init();
   MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	drv_lpuart1_init();
+	drv_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
