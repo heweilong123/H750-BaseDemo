@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "bdma.h"
+#include "usart.h"
 #include "memorymap.h"
 #include "gpio.h"
 
@@ -91,8 +93,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_BDMA_Init();
+  MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	drv_lpuart1_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,7 +106,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		LED_R_SET(KEY_STATUS_IRQ == KEY_ON ? LED_ON : LED_OFF);
+//		LED_R_SET(KEY_STATUS_IRQ == KEY_ON ? LED_ON : LED_OFF);
+		drv_lpuart1_poll();
   }
   /* USER CODE END 3 */
 }
