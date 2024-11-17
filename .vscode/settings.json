@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "leddev.h": "c",
+        "main.h": "c",
+        "stm32h7xx_hal_gpio.h": "c",
+        "keydev.h": "c",
+        "gpio.h": "c",
+        "stm32h7xx_it.h": "c",
+        "stdio.h": "c",
+        "24c02dev.h": "c",
+        "stm32h7xx_hal.h": "c",
+        "qspi_flash.h": "c",
+        "cmsis_os.h": "c",
+        "freertos.h": "c",
+        "task.h": "c",
+        "usart.h": "c",
+        "string.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
