@@ -7,5 +7,5 @@ void drv_init(void)
 	/* 调试串口初始化 */
 	drv_lpuart1_init();
 
-	printf("base drv version: %s\r\n", BASE_DRV_VERSION);
+	drv_lpuart1_printf("base drv version: %s\r\n", BASE_DRV_VERSION);
 }

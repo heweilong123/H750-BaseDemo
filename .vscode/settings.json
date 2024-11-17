@@ -18,7 +18,8 @@
 			"drv_include.h": "c",
 			"drv_led.h": "c",
 			"drv_lpuart1.h": "c",
-			"drv_key.h": "c"
+			"drv_key.h": "c",
+			"string": "c"
 		},
     "C_Cpp.errorSquiggles": "disabled"
 }

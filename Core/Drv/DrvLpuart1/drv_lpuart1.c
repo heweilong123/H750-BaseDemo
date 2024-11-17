@@ -1,5 +1,7 @@
 #include "main.h"
 #include "drv_include.h"
+
+#include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -16,7 +18,7 @@ extern UART_HandleTypeDef hlpuart1;
 
 static bool init_over = false;
 
-static void my_transmit_dma(uint8_t* data, size_t len)
+void drv_lpuart1_transmit_dma(uint8_t* data, size_t len)
 {
 	if(init_over == false)
 		return;
@@ -34,17 +36,15 @@ static void my_transmit_dma(uint8_t* data, size_t len)
 	while((usart->ISR & (1<<6)) != (1<<6));
 }
 
-int fputc(int ch, FILE *f)
+void drv_lpuart1_printf(const char *format,  ...)
 {
-	HAL_UART_Transmit(&hlpuart1,(uint8_t *)&ch, 1, 0xFFFF);
-	return ch;
-}
+	va_list args;
+	va_start(args, format);
+	uint8_t buffer[128] = {0};
+	uint32_t length = vsnprintf((char  *)buffer, sizeof(buffer), (char  *)format, args);
+	va_end(args);
 
-int fgetc(FILE *f)
-{
-	uint8_t ch;
-	HAL_UART_Receive(&hlpuart1,(uint8_t *)&ch, 1, 0xFFFF);
-	return ch;
+	HAL_UART_Transmit(&hlpuart1, buffer, length, 0xFFFF);
 }
 
 void drv_lpuart1_init(void)
@@ -65,9 +65,8 @@ void drv_lpuart1_poll(void)
 		return;
 	
 	if(recv_end_flag ==1)
-	{	
-		my_transmit_dma(buffer, rx_len);
-		
+	{
+		drv_lpuart1_printf("%s \r\n", buffer);
 		for(uint8_t i=0;i<rx_len;i++)
 		{
 			rx_buffer[i]=0;
